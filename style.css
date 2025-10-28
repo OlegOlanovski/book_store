@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+  color: white;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(7, 44, 58);
+}
+main {
+  padding: 60px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #083d51;
+}
+.header_img {
+  height: 56px;
+  width: auto;
+}
+.book_box {
+  background-color: #083d51;
+  height: 580px;
+  width: 320px;
+  padding: 16px 0;
+  border-radius: 16px;
+}
+h2 {
+  text-align: center;
+  padding-bottom: 8px;
+}
+.book_imgsection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #125872;
+}
+.open_book {
+  height: 120px;
+}
+.main_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.book_description {
+  padding: 16px;
+}
+.book_price_like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+}
+.like_heart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.heart_img {
+  height: 32px;
+  cursor: pointer;
+}
+table {
+  padding-bottom: 8px;
+  width: 100%;
+}
+td {
+  width: 50%;
+}
+.book_comment_container {
+  padding: 16px;
+}
+.book_comment {
+  height: 120px;
+  overflow: auto;
+  font-size: 16px;
+}
+.user {
+  display: flex;
+}
+.comment_btn {
+  height: 27px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+.send_comment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  color: black;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.input_field {
+  width: 90%;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #083d51;
+}
