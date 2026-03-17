@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @typedef {Object} BookLover
  * @property {string} name - Buch Titel
  * @property {string} author - Buch Autor
@@ -7,7 +35,7 @@
  * @property {number} price - Preis des Buches
  * @property {number} publishedYear - Erscheinungsjahr des Buches
  * @property {string} genre - Genre des Buches
- * @property {Array.<Comment>} comments - Liste der Kommentare zum Buch
+ * @property {Array.&lt;Comment>} comments - Liste der Kommentare zum Buch
  */
 
 let books = [
@@ -212,7 +240,7 @@ function init() {
 function renderBooks() {
   let contentRef = document.getElementById("main_container");
   contentRef.innerHTML = "";
-  for (let indexBook = 0; indexBook < books.length; indexBook++) {
+  for (let indexBook = 0; indexBook &lt; books.length; indexBook++) {
     contentRef.innerHTML += getBookTemplate(indexBook);
     renderComments(indexBook);
   }
@@ -220,55 +248,55 @@ function renderBooks() {
 
 function getBookTemplate(indexBook) {
   return `
-    <div class="book_box">
-       <h2>${books[indexBook].name}</h2> 
-        <hr>
-            <div class="book_imgsection">
-                <img src="./img/open-book.png" class="open_book">
-            </div>
-            <hr>
-            <div class="book_description">
-              <div class="book_price_like">
-               <h2>${formatPrice(books[indexBook].price)}</h2>
-                    <div class="like_heart" onclick="toggleLike(${indexBook})">
-                     <span>${books[indexBook].likes}</span>
-                 <img class="heart_img" src="./img/${
+    &lt;div class="book_box">
+       &lt;h2>${books[indexBook].name}&lt;/h2> 
+        &lt;hr>
+            &lt;div class="book_imgsection">
+                &lt;img src="./img/open-book.png" class="open_book">
+            &lt;/div>
+            &lt;hr>
+            &lt;div class="book_description">
+              &lt;div class="book_price_like">
+               &lt;h2>${formatPrice(books[indexBook].price)}&lt;/h2>
+                    &lt;div class="like_heart" onclick="toggleLike(${indexBook})">
+                     &lt;span>${books[indexBook].likes}&lt;/span>
+                 &lt;img class="heart_img" src="./img/${
                    books[indexBook].liked ? "heart.png" : "dislike.png"
                  }">
-                    </div>
-                </div>
-                 <table>
-    <tbody>
-     <tr>
-      <td>Author:</td>
-      <td>${books[indexBook].author}</td>
-     </tr>
-       <tr>
-      <td>Erscheinungsjahr:</td>
-      <td>${books[indexBook].publishedYear}</td>
-     </tr>
-       <tr>
-      <td>Genre:</td>
-      <td>${books[indexBook].genre}</td>
-     </tr>
-    </tbody>
-    </table>  
+                    &lt;/div>
+                &lt;/div>
+                 &lt;table>
+    &lt;tbody>
+     &lt;tr>
+      &lt;td>Author:&lt;/td>
+      &lt;td>${books[indexBook].author}&lt;/td>
+     &lt;/tr>
+       &lt;tr>
+      &lt;td>Erscheinungsjahr:&lt;/td>
+      &lt;td>${books[indexBook].publishedYear}&lt;/td>
+     &lt;/tr>
+       &lt;tr>
+      &lt;td>Genre:&lt;/td>
+      &lt;td>${books[indexBook].genre}&lt;/td>
+     &lt;/tr>
+    &lt;/tbody>
+    &lt;/table>  
           
-     </div>
-     <hr>
-     <div class="book_comment_container">
-        <h3>Kommentare:</h3>
-    <div id="book_comment_${indexBook}" class="book_comment">
+     &lt;/div>
+     &lt;hr>
+     &lt;div class="book_comment_container">
+        &lt;h3>Kommentare:&lt;/h3>
+    &lt;div id="book_comment_${indexBook}" class="book_comment">
       
-        </div>
-            <div class="send_comment">
-                <input type="text" class="input_field" placeholder="Kommentar..." id="comment_input_${indexBook}">
-                <img onclick="addComment(${indexBook})" class="comment_btn" src="./img/paper-plane_9449259.png" alt="senden">
-            </div>
-        </div>
+        &lt;/div>
+            &lt;div class="send_comment">
+                &lt;input type="text" class="input_field" placeholder="Kommentar..." id="comment_input_${indexBook}">
+                &lt;img onclick="addComment(${indexBook})" class="comment_btn" src="./img/paper-plane_9449259.png" alt="senden">
+            &lt;/div>
+        &lt;/div>
    
    
-    </div>`;
+    &lt;/div>`;
 }
 function renderComments(indexBook) {
   let book = books[indexBook];
@@ -276,19 +304,19 @@ function renderComments(indexBook) {
   commentRef.innerHTML = "";
 
   if (book.comments.length === 0) {
-    commentRef.innerHTML = `<i>Keine Kommentare vorhanden</i>`;
+    commentRef.innerHTML = `&lt;i>Keine Kommentare vorhanden&lt;/i>`;
     return;
   }
 
-  for (let i = 0; i < book.comments.length; i++) {
+  for (let i = 0; i &lt; book.comments.length; i++) {
     commentRef.innerHTML += `
-        <div class="comment_box">
-        <table>
-        <tbody>
-          <td class="user">${book.comments[i].name}:</td> <td> ${book.comments[i].comment}</td>
-         </tbody>         
-          </table>
-        </div>
+        &lt;div class="comment_box">
+        &lt;table>
+        &lt;tbody>
+          &lt;td class="user">${book.comments[i].name}:&lt;/td> &lt;td> ${book.comments[i].comment}&lt;/td>
+         &lt;/tbody>         
+          &lt;/table>
+        &lt;/div>
       `;
   }
 }
@@ -341,3 +369,26 @@ function getFromLocalStorage() {
   }
 }
 // смотри в инит там прописана функция гетфром локал сторедж при загрузке страницы это для считывания уже сохраненых данных!
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Mar 17 2026 10:54:25 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
